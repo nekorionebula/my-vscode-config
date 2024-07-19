@@ -28,7 +28,7 @@
   "tabnine.experimentalAutoImports": true,
   "editor.linkedEditing": true,
   "workbench.sideBar.location": "right",
-  "workbench.colorTheme": "Mayukai Reversal",
+  "workbench.colorTheme": "Dracula At Night",
   "json.schemas": [],
   "workbench.startupEditor": "none",
   "editor.minimap.enabled": false,
@@ -37,170 +37,157 @@
     "editor.defaultFormatter": "golang.go"
   },
 
-    // Vim setup
-    "vim.enableNeovim": false,
-    "vim.neovimPath": "/usr/bin/nvim",
-    "vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
-    "vim.leader": "<space>",
-    "vim.cursorStylePerMode.insert": "block",
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.handleKeys": {
-      "<C-a>": false,
-      "<C-f>": false,
-      "<C-d>": false,
-      "<C-c>": false,
-      "<C-x>": false,
-      "<C-v>": false
+        
+
+  // Vim setup
+  "vim.enableNeovim": false,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
+  "vim.leader": "<space>",
+  "vim.cursorStylePerMode.insert": "block",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-c>": false,
+    "<C-x>": false,
+    "<C-v>": false,
+    "<C-b>": false
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // NAVIGATION
+    // switch b/w buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
     },
-    "vim.insertModeKeyBindings": [
+    {
+      "before": ["<C-n>"],
+      "after": [],
+      "commands": [
+        {
+          "command": ":nohl"
+        }
+      ]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "i"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.focus"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "u"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusActiveEditorGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "o"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen"
+        }
+      ]
+    },
+    
+    //Split
+    {
+      "before": ["<leader>", "v"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditor"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusFirstEditorGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusSecondEditorGroup"
+        }
+      ]
+    },
+
       {
-        "before": [
-          "j",
-          "j"
-        ],
-        "after": [
-          "<Esc>"
-        ]
-      }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-      {
-        "before": [
-          "<leader>",
-          "d"
-        ],
-        "after": [
-          "d",
-          "d"
-        ]
-      },
-      {
-        "before": [
-          "<C-n>"
-        ],
-        "after": [],
-        "commands": [
-          {
-            "command": ":nohl"
-          }
-        ]
-      },
-      {
-        "before": [
-          "K"
-        ],
-        "commands": [
-          "lineBreakInsert"
-        ],
-        "silent": true
-      },
-      {
-        "before": [
-          "<leader>",
-          "i"
-        ],
-        "after": [],
-        "commands": [
-          {
-            "command": "workbench.action.terminal.focus"
-          }
-        ]
-      },
-      {
-        "before": [
-          "<leader>",
-          "u"
-        ],
-        "after": [],
-        "commands": [
-          {
-            "command": "workbench.action.focusActiveEditorGroup"
-          }
-        ]
-      },
-      {
-        "before": [
-          "<leader>",
-          "p"
-        ],
-        "after": [],
-        "commands": [
-          {
-            "command": "workbench.action.quickOpen"
-          }
-        ]
-      },
-      {
-        "before": [
-          "<leader>",
-          "o"
-        ],
-        "after": [],
-        "commands": [
-          {
-            "command": "workbench.action.quickOpen"
-          }
-        ]
-      },
-      {
-        "before": [
-          "<leader>",
-          "n"
-        ],
-        "after": [],
-        "commands": [
-          {
-            "command": "workbench.action.terminal.toggleTerminal"
-          }
-        ]
-      },
-      {
-        "before": [
-          "<leader>",
-          "v"
-        ],
-        "after": [],
-        "commands": [
-          {
-            "command": "workbench.action.splitEditor"
-          }
-        ]
-      },
-      {
-        "before": [
-          "<leader>",
-          "h"
-        ],
-        "after": [],
-        "commands": [
-          {
-            "command": "workbench.action.focusFirstEditorGroup"
-          }
-        ]
-      },
-      {
-        "before": [
-          "<leader>",
-          "l"
-        ],
-        "after": [],
-        "commands": [
-          {
-            "command": "workbench.action.focusSecondEditorGroup"
-          }
-        ]
-      }
-    ],
-    "vim.visualModeKeyBindings": [
-      // In visual mode i goes to insert mode
-      {
-        "before": ["i"],
-        "after": ["<Esc>", "i"]
-      }
-    ],
-  "editor.lineNumbers": "relative"
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },    
+
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.terminal.new"]
+    },
+
+    // NICE TO HAVE
+    { "before": ["leader", "w"], "commands": [":w!"] },
+    { "before": ["leader", "q"], "commands": [":q!"] },
+    { "before": ["leader", "x"], "commands": [":x!"] },
+  ],
+
+  "vim.visualModeKeyBindings": [
+    // In visual mode i goes to insert mode
+    {
+      "before": ["i"],
+      "after": ["<Esc>", "i"]
+    },
+    {
+      "before": ["a"],
+      "after": ["<Esc>", "a"]
+    },
+
+    // Stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+
+    // toggle comment selection
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+
+  "editor.lineNumbers": "relative",
+  "git.openRepositoryInParentFolders": "never"
 }

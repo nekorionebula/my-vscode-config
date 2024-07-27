@@ -1,4 +1,4 @@
-# Vim and VSCode Configuration
+# Vim in VSCode Configuration
 
 ## Insert Mode
 
